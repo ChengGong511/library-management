@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/library-management?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# application.yml
+pagehelper:
+  helperDialect: mysql # 根据您的数据库类型设置，例如mysql, oracle, postgresql
+  reasonable: true # 分页合理化，当pageNum<1或pageNum>pages时自动处理
+  supportMethodsArguments: true
+  params: count=countSql
